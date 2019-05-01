@@ -1,0 +1,32 @@
+31
+move();
+if (frontIsClear())
+{
+  pickBeeper(); 
+  while (anyBeeperInBeeperBag())
+  { 
+    putBeeper();
+    turnLeft();
+    if (leftIsBlocked())
+    { 
+      move();
+    }
+    else
+    { 
+      turnRight();
+      iterate 5 
+      {
+        move();  
+      }
+    }
+    putBeeper();
+  }
+}
+else
+{
+  turnLeft();
+  if (nextToABeeper())
+  {
+    pickBeeper();
+  }
+}
